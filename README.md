@@ -3,6 +3,8 @@
 A script that watches files and re-runs tests with nose when files
 have changed.
 
+====================
+
 ## Must have
 
 * use `pyinotify` to monitor files; **no polling**
