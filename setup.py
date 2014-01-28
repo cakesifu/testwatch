@@ -13,17 +13,18 @@ setup(
     version = "0.0.1",
     author = "Cezar Berea",
     author_email = "berea.cezar@gmail.com",
-    description = ("An demonstration of how to create, document, and publish "
-                                   "to the cheese shop a5 pypi.org."),
-    license = "BSD",
+    description = ("A watcher that runs nosetests when source files change"),
+    license = "MIT",
     keywords = "Watch and re-run nosetests",
     url = "http://packages.python.org/",
     packages=['nosewatch', 'tests'],
+    install_requires=['nose', 'pyinotify'],
+    test_require=[],
     long_description=read('README.md'),
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",
-        "License :: OSI Approved :: BSD License",
+        "License :: OSI Approved :: MIT License",
     ],
     entry_points = {
         'console_scripts': [

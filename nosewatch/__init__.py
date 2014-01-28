@@ -6,14 +6,18 @@ class Logger(object):
     def info(self, message):
         print message
 
-logger = Logger()
 
 class TestRunner(object):
     def run(self):
         nose.main()
 
-runner = TestRunner()
+
+from pyinotify import WatchManager, Notifier, EventsCodes, ProcessEvent
 
 def run():
-    logger.info('Starting watcher with args: %s' % sys.argv)
+    logger = Logger()
+    runner = TestRunner()
+    logger.info('Starting watcher with args: %s' % sys.argv[1:])
     runner.run()
+
+# watcher
