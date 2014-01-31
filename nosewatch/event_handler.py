@@ -7,7 +7,7 @@ def now():
 
 class FileEventHandler(pyinotify.ProcessEvent):
 
-    delay = 250
+    delay = 400
 
     def __init__(self, runner, tester):
         self.runner = runner

@@ -9,12 +9,18 @@ class Watcher(object):
          | pyinotify.IN_MODIFY
 
     # poll rate(in Hz) for I/O events
-    poll_rate = 8
+    poll_rate = 4
+
+    notifier_timeout = 100
 
     def __init__(self, handler, path):
         self.wm = pyinotify.WatchManager()
         self.handler = handler
-        self.notifier = pyinotify.Notifier(self.wm, handler, timeout=10)
+        self.notifier = pyinotify.Notifier(
+            self.wm,
+            handler,
+            timeout=self.notifier_timeout
+        )
         self.wd = self.wm.add_watch(path, self.mask, rec=True)
 
     def check(self):
