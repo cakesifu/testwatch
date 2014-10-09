@@ -9,17 +9,17 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name = "nosewatch",
+    name = "testwatch",
     version = "0.0.1",
     author = "Cezar Berea",
     author_email = "berea.cezar@gmail.com",
-    description = ("A watcher that runs nosetests when source files change"),
+    description = ("A watcher that runs tests when source files change"),
     license = "MIT",
-    keywords = "Watch and re-run nosetests",
+    keywords = "Watch and re-run tests",
     url = "http://packages.python.org/",
-    packages=['nosewatch', 'tests'],
+    packages=['testwatch'],
     install_requires=['nose', 'pyinotify'],
-    test_require=[],
+    test_requires=[],
     long_description=read('README.md'),
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -28,7 +28,7 @@ setup(
     ],
     entry_points = {
         'console_scripts': [
-            'nosewatch = nosewatch:run'
+            'testwatch = testwatch:run'
         ]
     }
 )

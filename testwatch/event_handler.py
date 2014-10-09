@@ -2,12 +2,13 @@ import pyinotify
 import time
 
 from .logger import logger
+
 def now():
     return int(round(time.time() * 1000))
 
 class FileEventHandler(pyinotify.ProcessEvent):
 
-    delay = 400
+    delay = 500
 
     def __init__(self, runner, tester):
         self.runner = runner
@@ -52,4 +53,4 @@ class FileEventHandler(pyinotify.ProcessEvent):
     def _print_files(self):
         for filename in self.queue:
             action = "changed"
-            logger.info("file %s - %s", filename, action)
+            logger.info("file %s  [%s]", filename, action)
